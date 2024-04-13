@@ -1,1 +1,32 @@
+# node_modules
 /node_modules
+
+# build
+/build
+
+# logs
+/logs
+
+# dependencies
+/package-lock.json
+/yarn.lock
+
+# environment variables
+/.env
+
+# IDE files
+/.vscode
+/.idea
+
+# compiled output
+/dist
+
+# test coverage reports
+/coverage
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# editor backup files
+*~
