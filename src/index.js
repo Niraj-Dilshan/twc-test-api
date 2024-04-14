@@ -16,12 +16,6 @@ mongoose.connect(config.mongodb_uri)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
-// log mongoDB URI 
-console.log(`MongoDB URI: ${config.mongodb_uri}`);
-
-// log port
-console.log(`Port :${config.port}`)
-
 // Routes
 app.use('/auth', authRoutes);
 app.use('/contacts', contactRoutes);
