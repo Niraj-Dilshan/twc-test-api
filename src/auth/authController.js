@@ -5,7 +5,12 @@ exports.register = async (req, res) => {
         const user = await authService.register(req.body);
         res.json(user);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        if (err.code === 11000) {
+            return res.status(400).json({ message: 'Email already in use' });
+        }
+        else {
+            return res.status(400).json({ message: err.message });
+        }
     }
 };
 
