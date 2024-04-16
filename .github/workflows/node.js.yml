@@ -22,5 +22,10 @@ jobs:
         cache: 'npm'
     - run: rm package-lock.json
     - run: npm i
+    - name: Create .env file
+      run: |
+        echo "PORT=${{ secrets.PORT }}" > .env
+        echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" >> .env
+        echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
     - run: pm2 resurrect
     - run: pm2 restart 1
